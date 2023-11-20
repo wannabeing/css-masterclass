@@ -1,0 +1,143 @@
+@import "./reset.scss";
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dce6d1;
+  height: 100vh;
+}
+
+.phone {
+  background-color: black;
+  border-radius: 40px;
+  width: 420px;
+  height: 95%;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  overflow-x: scroll; // x좌표 스크롤 가능하게 하기
+
+  &::-webkit-scrollbar {
+    display: none; // 스크롤바 display: none;
+  }
+
+  .header__list {
+    display: flex;
+    color: white;
+    gap: 5px;
+    width: max-content; // width 넘어가는 컨텐츠 보이게 하기
+
+    .header__list-item {
+      border: 1px solid #545454;
+      border-radius: 20px;
+      padding: 10px;
+
+      // all 버튼
+      &:first-child {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 20px;
+
+  .cards__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+
+    .card__title {
+      font-size: 24px;
+    }
+    .card__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+
+      span {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 7px 10px;
+      }
+      .length {
+        background-color: white;
+      }
+    }
+
+    // 1번째 카드
+    &:first-child {
+      background-color: #292d32;
+      border: 1px solid white;
+
+      .card__title {
+        color: white;
+      }
+      .card__footer {
+        .price {
+          background-color: #fedd2d;
+        }
+      }
+    }
+    // 2번쨰 카드
+    &:nth-child(2) {
+      background-color: white;
+      .card__footer {
+        .price {
+          background-color: #fedd2d;
+        }
+      }
+    }
+    // 3번째 카드
+    &:nth-child(3) {
+      background-color: #fbfec7;
+      .card__footer {
+        .price {
+          background-color: #e9aefc;
+        }
+      }
+    }
+    // 4번째 카드
+    &:nth-child(4) {
+      background-color: #b09ef5;
+      .card__footer {
+        .price {
+          background-color: #fedd2d;
+        }
+      }
+    }
+    // 5번째 카드
+    &:nth-child(5) {
+      background-color: #fed5d5;
+      .card__footer {
+        .price {
+          background-color: #e9aefc;
+        }
+      }
+    }
+    // 6번째 카드
+    &:nth-child(6) {
+      background-color: #cfffdc;
+      .card__footer {
+        .price {
+          background-color: #e9aefc;
+        }
+      }
+    }
+    &:nth-child(3n) {
+      grid-column: span 2;
+    }
+  }
+}
