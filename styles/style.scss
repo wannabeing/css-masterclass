@@ -1,17 +1,121 @@
 @import "./reset.scss";
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3f6ff;
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+  background-color: #ffffff;
   height: 100vh;
 }
+.header {
+  .header__nav {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr) 1.5fr repeat(5, 1fr);
+    }
 
-.phone {
-  width: 480px;
-  height: 90%;
-  border-radius: 10px;
-  background-color: #ffffff;
-  box-shadow: 5px 10px 10px rgba($color: #000000, $alpha: 0.5);
+    .header__tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 10px;
+      border: 1px solid #a7a7a7;
+
+      &:nth-child(6) {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .header__breadcrumbs {
+    padding: 10px;
+    border-bottom: 1px solid #a7a7a7;
+
+    .header__crumb {
+      font-size: 14px;
+
+      &:last-child {
+        color: #c3c3c3;
+      }
+    }
+  }
+}
+
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  border-bottom: 1px solid #a7a7a7;
+  .product__img {
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover;
+  }
+
+  .product__info {
+    display: grid;
+    grid-template-rows: 1.3fr 1fr;
+
+    .product__info-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 20px;
+      border-bottom: 1px solid #a7a7a7;
+      gap: 10px;
+
+      .info-header__category {
+        font-weight: bold;
+        color: #a7a7a7;
+      }
+      .info-header__title {
+        font-size: 38px;
+        font-weight: bold;
+      }
+      .info-header__subinfo {
+        display: flex;
+        gap: 50px;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+
+        .subinfo-count {
+          span {
+            &:first-child {
+              color: #a7a7a7;
+            }
+          }
+        }
+      }
+    }
+
+    .product__info-footer {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .info-footer__notice {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-right: 1px solid #a7a7a7;
+        padding: 40px;
+        font-size: 14px;
+        color: #a7a7a7;
+      }
+
+      .info-footer__qna {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px;
+
+        .qna-section {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 10px;
+          border-bottom: 1px solid black;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
