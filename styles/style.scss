@@ -1,175 +1,65 @@
 @import "./reset.scss";
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2e657;
-  height: 100vh;
-}
-.wrapper {
-  width: 96%;
-  height: 96%;
-  background-color: #fd6b3b;
-  box-sizing: border-box;
   display: grid;
-  grid-template-columns: 40px 1fr 40px;
-  grid-template-rows: 40px 1fr 40px;
-  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 40px repeat(3, 1fr);
   padding: 5px;
+  gap: 5px;
+  background-color: black;
+  height: 100vh;
+  box-sizing: border-box;
+}
 
-  .header__bar {
-    grid-column: span 3;
+.header {
+  grid-column: span 3;
+  background-color: black;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+
+  .header__content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    color: #fd6b3b;
-    font-weight: bold;
-    overflow: hidden;
+    padding: 0 10px;
+    background-color: white;
 
-    .header__bar-text {
-      width: max-content;
-      white-space: nowrap;
+    .header__content-circle {
+      width: 0px;
+      height: 0px;
+      border-top: 10px solid black;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
     }
   }
+}
+.main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: white;
 
-  .left__bar {
-    display: grid;
-    grid-template-rows: 1fr 0.7fr 0.2fr;
-    gap: 5px;
-
-    .bar-left-first-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      color: white;
-      font-weight: bold;
-    }
-    .bar-left-second-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      writing-mode: vertical-rl;
-      text-orientation: sideways-right;
-      background-color: white;
-      color: #fd6b3b;
-      font-weight: bold;
-      transform: rotateZ(180deg);
-    }
-    .bar-left-thrid-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      background-color: white;
-
-      .circle {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: #fd6b3b;
-      }
-    }
+  .content__img {
+    width: 70%;
+    height: 60%;
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover;
   }
 
-  .right__bar {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  .content__text {
     width: 100%;
-
-    .right__bar-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50%;
-      background-color: #45ab4e;
-
-      .right__bar-text {
-        writing-mode: vertical-lr;
-        text-orientation: upright;
-        font-weight: bold;
-        color: white;
-      }
-    }
-  }
-
-  .footer__bar {
-    grid-column: span 3;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    color: #fd6b3b;
+    padding: 0 20px;
+    box-sizing: border-box;
 
-    font-weight: bold;
-    overflow: hidden;
-
-    .footer__bar-text {
-      width: max-content;
-      white-space: nowrap;
+    .content__text-rm {
+      text-decoration: underline;
     }
-  }
-
-  .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-
-    .left-section {
-      width: 50%;
-      height: 100%;
-    }
-    .right-section {
-      width: 50%;
-      height: 100%;
-    }
-
-    .img {
-      width: 100%;
-      height: 100%;
-      background-image: url("https://source.unsplash.com/random");
-      background-size: cover;
-    }
-
-    .main__title {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .main__title-text {
-        font-weight: bold;
-        color: white;
-        font-size: 10vw;
-        text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.5),
-          0px -3px 20px rgba(0, 0, 0, 0.7);
-      }
-    }
-  }
-
-  .talk {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: #fd6b3b;
-    border-radius: 10px;
-    font-weight: bold;
-    color: white;
-
-    box-shadow: 2px 8px 6px rgba(0, 0, 0, 0.5), 0px -3px 20px rgba(0, 0, 0, 0.7);
   }
 }
