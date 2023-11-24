@@ -9,57 +9,73 @@ body {
 }
 
 .poster {
-  display: grid;
-  grid-template-rows: 30fr 70fr;
-  width: 70%;
+  width: 60%;
   height: 100%;
-  background-color: #5dbd44;
+  background-color: #dde2d2;
+  padding: 10px;
+  box-sizing: border-box;
 
-  .top {
-    display: grid;
-    grid-template-columns: 70fr 30fr;
-    padding: 30px;
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  grid-template-rows: 60px 1.2fr 60px 1fr 60px 1.2fr 60px;
 
-    .top__box {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+  .top-left,
+  .top-right {
+    grid-row: span 2;
+  }
+  .center-left,
+  .center-right {
+    grid-row: span 3;
+  }
+  .bottom-bottom {
+    grid-column: span 3;
+  }
+
+  .top-left,
+  .top-top,
+  .top-right,
+  .center-bottom {
+    background-color: #00a1c8;
+  }
+
+  .center-top,
+  .bottom-left,
+  .bottom-right,
+  .bottom-bottom {
+    background-color: #d13022;
+  }
+  .center-left,
+  .center-right {
+    background-color: #583734;
+  }
+
+  .top-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    font-weight: 500;
+  }
+
+  .center-center {
+    padding: 20px;
+    h1 {
       font-weight: bold;
-
-      h1 {
-        font-size: 92px;
-      }
-
-      &:last-child {
-        color: white;
-        font-size: 22px;
-        align-self: center;
-      }
+      font-size: 92px;
     }
   }
 
-  .bottom {
-    overflow: hidden;
+  .bottom-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 500;
 
-    .circles {
-      display: grid;
-      height: 100%;
-      grid-template: repeat(11, 1fr) / repeat(11, 1fr);
-      gap: 5px;
-      background-color: black;
-      transform: scale(1.1);
-
-      .circle {
-        border-radius: 50%;
-        background-color: #5dbd44;
-
-        &:nth-child(4n) {
-          background-color: white;
-        }
-        &:nth-child(3n) {
-          background-color: white;
-        }
-      }
+    .bottom-top__bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 }
